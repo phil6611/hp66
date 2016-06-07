@@ -31,11 +31,12 @@ class WP_hp66{
         //Menu principal
         add_menu_page( 'Carte HP66', 'Carte', 'manage_options', 'carte', array(
                           __CLASS__,
-                         'wpa_page_file_path'
+                         //'wpa_page_file_path'
+                        'carte_html'
                         ));
         
         //Affichage de la carte
-        add_submenu_page( 'carte', 'Carte', ' Dashboard', 'manage_options', 'carte-dashboard', array(
+        add_submenu_page( 'carte', 'Carte', ' Adhérents', 'manage_options', 'carte-adherent', array(
                               __CLASS__,
                              'carte_html'
                             ));
@@ -46,19 +47,26 @@ class WP_hp66{
     /*
      * Fonction pour chaque page
      */
+    
+    //Cette méthode sert à afficher la carte dans le menu "carte"
     public function carte_html()
         {
 
-            echo '<p>Bienvenue sur la page d\'accueil du plugin</p>';
+            $code = file_get_contents("../wp-content/plugins/hp66/templates/carte.inc");
 
+            echo $code; 
         }
     
+    //Cette méthode sert pour la gestion des adhérents
+    public function carte_adherent() {
+        echo "gestion adherent";
+    }
+        
     /*
      * Actions perform on loading of menu pages
      */
     function wpa_page_file_path() {
 echo "test";
-
 
     }
 
