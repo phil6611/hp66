@@ -1,0 +1,11 @@
+/* 
+    Created on : 7 juin 2016, 17:49:46
+    Author     : Philippe Poisse
+*/
+
+#map {
+    display: block;
+    width: 500px;
+    height: 500px;
+    border: solid black 1px;
+}
